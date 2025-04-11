@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospitals Enrolled</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 40px;
+      border-radius: 15px;
+      color: white;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .container h1 {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+    .dropdown {
+      margin-bottom: 20px;
+    }
+
+    select {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      width: 100%;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    li {
+      padding: 6px 0;
+      font-size: 18px;
+    }
+
+    option {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hospitals Enrolled</h1>
+    <div class="dropdown">
+      <select id="citySelector" onchange="updateHospitals()">
+        <option value="">Select a City</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="delhi">Delhi</option>
+        <option value="bangalore">Bangalore</option>
+        <option value="chennai">Chennai</option>
+        <option value="kolkata">Kolkata</option>
+      </select>
+    </div>
+    <ul id="hospitalList"></ul>
+  </div>
+
+  <script>
+    const hospitalData = {
+      mumbai: [
+        "Fortis Hospital",
+        "Jaslok Hospital",
+        "Lilavati Hospital",
+        "Hinduja Hospital",
+        "Kokilaben Dhirubhai Ambani Hospital"
+      ],
+      delhi: [
+        "AIIMS Delhi",
+        "Max Super Specialty Hospital",
+        "Apollo Hospitals",
+        "Fortis Escorts Heart Institute",
+        "Sir Ganga Ram Hospital"
+      ],
+      bangalore: [
+        "Manipal Hospital",
+        "Narayana Health",
+        "Columbia Asia Hospital",
+        "Sakra World Hospital",
+        "Fortis Hospital, Bannerghatta Road"
+      ],
+      chennai: [
+        "Apollo Hospitals",
+        "MIOT International",
+        "Fortis Malar Hospital",
+        "Sri Ramachandra Medical Centre",
+        "Global Hospitals"
+      ],
+      kolkata: [
+        "AMRI Hospital",
+        "Fortis Hospital, Anandapur",
+        "Apollo Gleneagles Hospital",
+        "Peerless Hospital",
+        "Medica Superspecialty Hospital"
+      ]
+    };
+
+    function updateHospitals() {
+      const city = document.getElementById("citySelector").value;
+      const hospitalList = document.getElementById("hospitalList");
+      hospitalList.innerHTML = "";
+
+      if (hospitalData[city]) {
+        hospitalData[city].forEach(hospital => {
+          const li = document.createElement("li");
+          li.textContent = hospital;
+          hospitalList.appendChild(li);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
