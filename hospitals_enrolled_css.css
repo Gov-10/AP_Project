@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  .container h1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  
+  .dropdown {
+    margin-bottom: 20px;
+  }
+  
+  select {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  li {
+    padding: 6px 0;
+    font-size: 18px;
+  }
+  
+  option {
+    color: black;
+  }
