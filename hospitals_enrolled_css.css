@@ -1,9 +1,9 @@
 body {
     margin: 0;
-    background-image: url('pexels-photo-8621905.jpeg');
-    background: no-repeat center center/cover;
+    background: url('pexels-photo-8621905.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     height: 100vh;
     display: flex;
     justify-content: center;
