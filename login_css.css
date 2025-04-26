@@ -60,3 +60,82 @@
   .login-form button:hover {
     background-color: rgba(60, 100, 180, 1);
   }
+  .off-screen-menu {
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    width: 100%;
+    max-width: 300px;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .off-screen-menu.active {
+    right: 0;
+  }
+  
+  .off-screen-menu ul {
+    list-style: none;
+    text-align: center;
+  }
+  
+  .off-screen-menu li {
+    margin: 20px 0;
+  }
+  
+  .off-screen-menu a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+  }
+  
+  nav {
+    padding: 1rem;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .ham-menu {
+    height: 35px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  
+  .ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+  }
+  .element:hover {
+    color: cyan;
+    transition: 0.3s ease;
+  }
+  .ham-menu span:hover {
+    background-color: cyan;
+    transition: 0.3s ease;
+  }
+  .ham-menu :active{
+    color: cyan;
+    transition: 0.3s ease;
+  }
+  .ham-menu:hover .ham-bar {
+    background-color: cyan;
+  }
+  .ham-menu.active .ham-bar {
+    background-color: cyan;
+  }
+

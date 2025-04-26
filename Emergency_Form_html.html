@@ -6,6 +6,24 @@
   <link rel="stylesheet" href="Emergency_form_css.css">
 </head>
 <body>
+  <div class="off-screen-menu">
+    <ul>
+      <li><a href="home_html.html" class="element">Home</a></li>
+      <li><a href="Emergency_Form_html.html" class="element">Emergency</a></li>
+      <li><a href="hospitals_enrolled_html.html" class="element">Hospitals</a></li>
+      <li><a href="patient_info_html.html" class="element">Patient Info</a></li>
+      <li><a href="login_html.html" class="element">Login</a></li>
+    </ul>
+  </div>
+
+  <nav>
+    <div class="ham-menu">
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+    </div>
+  </nav>
+
   <form action="register.php" method="post">
     <div class="container">
       <div class="form-box">
@@ -23,4 +41,13 @@
     </div>
   </form>
 </body>
+<script>
+  const hamMenu = document.querySelector(".ham-menu");
+  const offScreenMenu = document.querySelector(".off-screen-menu");
+
+  hamMenu.addEventListener("click", () => {
+    offScreenMenu.classList.toggle("active");
+    hamMenu.classList.toggle("active");
+  });
+</script>
 </html>
