@@ -18,7 +18,7 @@
     padding: 40px;
     border-radius: 12px;
     text-align: center;
-    width: 320px;
+    width: 500px;
   }
   
   .logo {
@@ -33,7 +33,7 @@
     display: block;
     width: 100%;
     padding: 12px 15px;
-    margin-bottom: 15px;
+    margin-bottom: 25px; /* Increase space between input fields */
     border: none;
     border-radius: 8px;
     background: rgba(0, 127, 168, 0.5);
@@ -55,13 +55,15 @@
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 20px; /* Add some space between the last input and the button */
   }
   
   .login-form button:hover {
     background-color: rgba(60, 100, 180, 1);
   }
+
   .off-screen-menu {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
     height: 100vh;
     width: 100%;
     max-width: 300px;
@@ -95,6 +97,10 @@
     font-size: 2rem;
   }
   
+  .off-screen-menu a:hover{
+    color: #00e5ff;
+  }
+  
   nav {
     padding: 1rem;
     display: flex;
@@ -117,25 +123,7 @@
   .ham-menu span {
     height: 5px;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(200, 200, 200);
     border-radius: 5px;
   }
-  .element:hover {
-    color: cyan;
-    transition: 0.3s ease;
-  }
-  .ham-menu span:hover {
-    background-color: cyan;
-    transition: 0.3s ease;
-  }
-  .ham-menu :active{
-    color: cyan;
-    transition: 0.3s ease;
-  }
-  .ham-menu:hover .ham-bar {
-    background-color: cyan;
-  }
-  .ham-menu.active .ham-bar {
-    background-color: cyan;
-  }
-
+  
