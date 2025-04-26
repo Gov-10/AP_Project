@@ -1,69 +1,53 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('pexels-photo-8621905.jpeg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
   }
+
   
-  body {
-    background: url('pexels-photo-8621905.jpeg') no-repeat center center/cover;
-    height: 100vh;
+  .overlay {
+    padding: 80px 20px;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
   
-  .login-container {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 12px;
+  .content-box {
+    max-width: 700px;
+    color: white;
     text-align: center;
-    width: 500px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
   }
   
-  .logo {
-    color: white;
-    font-size: 32px;
-    margin-bottom: 30px;
+  .content-box h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .content-box p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  .highlight {
     font-weight: bold;
-    letter-spacing: 2px;
   }
   
-  .login-form input {
-    display: block;
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 25px; /* Increase space between input fields */
-    border: none;
-    border-radius: 8px;
-    background: rgba(0, 127, 168, 0.5);
-    color: white;
-    font-size: 16px;
-  }
-  
-  .login-form input::placeholder {
-    color: #e0e0e0;
-  }
-  
-  .login-form button {
-    width: 100%;
-    padding: 12px;
-    background-color: rgba(60, 100, 180, 0.8);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-top: 20px; /* Add some space between the last input and the button */
-  }
-  
-  .login-form button:hover {
-    background-color: rgba(60, 100, 180, 1);
+  .italic {
+    font-style: italic;
   }
 
   .off-screen-menu {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(0, 0, 0);
     height: 100vh;
     width: 100%;
     max-width: 300px;
@@ -97,10 +81,6 @@
     font-size: 2rem;
   }
   
-  .off-screen-menu a:hover{
-    color: #00e5ff;
-  }
-  
   nav {
     padding: 1rem;
     display: flex;
@@ -123,7 +103,7 @@
   .ham-menu span {
     height: 5px;
     width: 100%;
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
   }
   
