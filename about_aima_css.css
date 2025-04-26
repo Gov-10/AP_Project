@@ -1,13 +1,18 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url('pexels-photo-8621905.jpeg') no-repeat center center/cover;
-    overflow-y: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('pexels-photo-8621905.jpeg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
   }
 
   
   .overlay {
-    padding: 60px 20px;
+    padding: 80px 20px;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -40,6 +45,7 @@ body {
   .italic {
     font-style: italic;
   }
+
   .off-screen-menu {
     background-color: rgb(0, 0, 0);
     height: 100vh;
@@ -100,21 +106,4 @@ body {
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
   }
-  .element:hover {
-    color: cyan;
-    transition: 0.3s ease;
-  }
-  .ham-menu span:hover {
-    background-color: cyan;
-    transition: 0.3s ease;
-  }
-  .ham-menu :active{
-    color: cyan;
-    transition: 0.3s ease;
-  }
-  .ham-menu:hover .ham-bar {
-    background-color: cyan;
-  }
-  .ham-menu.active .ham-bar {
-    background-color: cyan;
-  }
+  
