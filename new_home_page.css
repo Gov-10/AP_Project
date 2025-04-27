@@ -196,3 +196,29 @@
       transform: translateX(-50%) translateY(-5px);
     }
   }
+  .element {
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    position: relative;
+    padding: 6px 10px;
+  }
+  .element:hover {
+    transform: scale(1.1);
+  }
+  .element::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    bottom: -5px;
+    background: cyan;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  .element:hover::after {
+    width: 100%;
+    left: 0;
+  }
