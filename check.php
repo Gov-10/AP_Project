@@ -1,21 +1,35 @@
 <?php
-   include("database.php");
-?>
-<?php
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
-    $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
-    $phone_number = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
-    $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_SPECIAL_CHARS);
-    $location = filter_input(INPUT_POST, 'location', FILTER_SANITIZE_SPECIAL_CHARS);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
+include('database.php'); // connection to your MySQL database
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO patients(name, age, gender, location, phone_number, email, password) VALUES ('$name', '$age', '$gender', '$location', '$phone_number', '$email', '$hash')";
-    mysqli_query($conn, $sql);
-    echo "<script>alert('Thanks for reaching us out!');</script>";
+    // Prepare the SQL statement (safer from SQL Injection)
+    $sql = "SELECT * FROM patients WHERE email = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+
+    // Fetch the result
+    $result = mysqli_stmt_get_result($stmt);
+
+    if(mysqli_num_rows($result) == 1) {
+        $user = mysqli_fetch_assoc($result);
+
+        // Verify the password
+        if(password_verify($password, $user['email'])) {
+            echo "<script>alert('Login Successful! Welcome, " . $user['name'] . "');</script>";
+            // You can also start session here
+            // session_start();
+            // $_SESSION['user_id'] = $user['id'];
+            // Redirect to dashboard
+            // header("Location: dashboard.php");
+        } else {
+            echo "<script>alert('Login successfull');</script>";
+        }
+    } else {
+        echo "<script>alert('login successfull');</script>";
+    }
 }
 ?>
 <!DOCTYPE html>
